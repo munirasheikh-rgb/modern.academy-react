@@ -1,0 +1,447 @@
+/* --- Theme: black + red on light canvas --- */
+:root {
+  /* Header/footer navy matched to assets/modernacademylogo.jpeg crest */
+  --color-brand-navy: #1a2d4e;
+  --color-brand-navy-deep: #152238;
+  --color-page-bg: #f0f2f5;
+  --color-content-bg: #fafbfc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #fff5f6;
+  --color-red: #c41e3a;
+  --color-red-bright: #e63950;
+  --color-red-deep: #7f0f1f;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5c5c5c;
+  --color-border: #e2e4e8;
+}
+
+/* --- Header --- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 2rem;
+  background: linear-gradient(180deg, var(--color-brand-navy) 0%, var(--color-brand-navy-deep) 100%);
+  color: #fff;
+  border-bottom: 3px solid var(--color-red);
+  box-shadow: 0 2px 12px rgba(21, 34, 56, 0.35);
+}
+
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.site-header .logo img {
+  height: clamp(44px, 8vw, 56px);
+  width: auto;
+  max-width: min(200px, 38vw);
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.site-header .logo h1 {
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.main-nav a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.main-nav a:hover {
+  color: var(--color-red-bright);
+  text-decoration: underline;
+}
+
+/* --- Hero Section (home: full-bleed image + watermark text) --- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(46vh, 360px);
+  padding: clamp(1rem, 3vw, 1.75rem) 1.25rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.02);
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 45, 78, 0.55) 0%,
+    rgba(21, 34, 56, 0.45) 45%,
+    rgba(196, 30, 58, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.hero-content h2 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.25);
+  opacity: 0.96;
+  letter-spacing: 0.02em;
+}
+
+.hero-tagline {
+  margin: 0 0 0.85rem;
+  font-size: clamp(0.9rem, 2.4vw, 1.15rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.4);
+  opacity: 0.9;
+}
+
+.btn-primary {
+  padding: 0.7rem 1.5rem;
+  background-color: var(--color-red);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-red-bright);
+}
+
+.hero .hero-cta {
+  display: inline-block;
+  padding: 0.55rem 1.25rem;
+  background: rgba(196, 30, 58, 0.72);
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+}
+
+.hero .hero-cta:hover {
+  background: rgba(230, 57, 80, 0.88);
+  color: #fff;
+  opacity: 1;
+}
+
+/* --- Main Content --- */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: var(--color-content-bg);
+}
+
+.content h2 {
+  color: var(--color-text);
+}
+
+.content section:not(.hero) p,
+.content .profile p,
+.content .dashboard p,
+.content .portal-login p,
+.content .results p {
+  color: var(--color-text-muted);
+}
+
+/* News Section */
+.news {
+  flex: 2 1 600px;
+}
+
+.news h2 {
+  margin-bottom: 1rem;
+}
+
+.news-card {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.news-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card h3 {
+  padding: 0.5rem 1rem;
+  color: var(--color-text);
+}
+
+.news-card p {
+  padding: 0 1rem 0.5rem 1rem;
+  color: var(--color-text-muted);
+}
+
+.news-card a {
+  display: inline-block;
+  margin: 0.5rem 1rem 1rem;
+  color: var(--color-red);
+  font-weight: bold;
+}
+
+/* Portal Sidebar */
+.portal {
+  flex: 1 1 250px;
+  background-color: var(--color-surface-muted);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(196, 30, 58, 0.2);
+}
+
+.portal h2 {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.portal ul {
+  list-style: none;
+}
+
+.portal li {
+  margin-bottom: 0.5rem;
+}
+
+.portal a {
+  color: var(--color-red);
+  font-weight: bold;
+}
+
+.portal a:hover {
+  color: var(--color-red-bright);
+  text-decoration: underline;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: linear-gradient(180deg, var(--color-brand-navy-deep) 0%, var(--color-brand-navy) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-top: 2px solid var(--color-red);
+}
+
+/* Fade-in animation for news cards */
+.news-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.news-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile menu toggle styles */
+.nav-toggle {
+  display: none;
+  background-color: var(--color-red);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.nav-toggle.open {
+  background-color: var(--color-red-bright);
+}
+
+@media (max-width: 500px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .main-nav.nav-open {
+    display: flex;
+  }
+}
+
+/* Event Cards */
+.event-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--color-surface);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.event-card h3 {
+  color: var(--color-text);
+}
+
+.event-card p {
+  color: var(--color-text-muted);
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(196, 30, 58, 0.12);
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 500px;
+}
+
+.contact-form label {
+  color: var(--color-text);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--color-red);
+  border-color: var(--color-red);
+}
+
+.contact-form button {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-red);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: var(--color-red-bright);
+}
+
+/* Portal login / dashboard sections */
+.portal-login,
+.dashboard,
+.profile,
+.results {
+  color: var(--color-text);
+}
+
+.portal-login h2,
+.dashboard h2,
+.profile h2,
+.results h2 {
+  color: var(--color-text);
+}
+
+.portal-login label {
+  color: var(--color-text);
+}
+
+.portal-login input {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.portal-login button {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--color-red);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.portal-login button:hover {
+  background-color: var(--color-red-bright);
+}
+
+.portal-links a {
+  color: var(--color-red);
+}
+
+.results-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 480px;
+  color: var(--color-text);
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+}
+
+.results-table thead {
+  background-color: var(--color-surface-muted);
+  color: var(--color-text);
+}
