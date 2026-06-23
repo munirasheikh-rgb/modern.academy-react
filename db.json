@@ -1,0 +1,16 @@
+{
+"students":[{
+
+      "id": 1,
+      "username": "student1",
+      "password": "1234",
+      "name": "Munira Hassan",
+      "grade": "Grade 7",
+      "classTeacher": "Mr. Otieno",
+      "feesBalance": 12000,
+      "totalfees":45000,
+      "remarks": "Amina is improving well and participates actively in class."
+    
+  }],
+"academics":[]
+}

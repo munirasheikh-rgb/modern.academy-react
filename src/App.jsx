@@ -32,10 +32,10 @@ function App() {
         <Route path="dashboard" element={<Dashboard/>} />
         <Route path="profile" element={<Profile/>} />
         <Route path="results" element={<Results/>} />
+        <Route path="event" element={<Events/>} />
       <Route/>  
     </Routes>
   
- <Events/>
  
  <Footer />
  

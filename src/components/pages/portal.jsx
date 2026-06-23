@@ -10,6 +10,7 @@ export default function Portal(){
         <li><Link to="/portal/profile">Profile</Link></li>
         <li><Link to="/potal/results">Results</Link></li>
         <li><Link to="/portal/logout">LogOut</Link></li>
+        <li><Link to="/portal/event">Event</Link></li>
       </ul>
     </nav>
     <Outlet/>
